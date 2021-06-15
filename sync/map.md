@@ -1,4 +1,3 @@
-Golang sync map
 在golang中，线程安全的map实现为sync.Map，相较于java中线程安全的map ConcurrentHashMap，在设计与实现上都有巨大的差别。
 ## java中的ConcurrentHashMap
 java中的ConcurrentHashMap为了实现线程安全，在1.7当中，通过分段锁的实现达到了这一目的，区别于HashTable的全部阻塞操作，分段锁的设计在一定程度上提升了在并发场景下的访问性能。在1.8的过程中，锁的粒度被进一步降低，被缩小到了一个HashEntry首节点的地步，并通过在一定长度的链表后引入红黑树来降低遍历寻找数据的开销。        
